@@ -8,14 +8,13 @@ var username;
 
 //this is how after we type in the character name and hit enter
 //we will add the name to the variable, remove the input box and start our first scenario
-input.onkeypress = function (event) {
-  console.log(input.value);
-  if (event.key == "Enter" || event.keyCode == 13) {
+input.addEventListener('keyup', function(event) {
+  if (event.key === 'Enter' || event.keyCode === 13) {
     username = input.value;
     input.parentNode.removeChild(input);
     advanceTo(scenario.two);
   }
-};
+});
 
 //this changes the text and puts in your characters name
 var changeText = function (words) {
